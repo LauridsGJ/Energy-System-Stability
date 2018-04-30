@@ -135,7 +135,7 @@ linkcolor=Black, citecolor=Black]{hyperref}
 %%%%%%%%%%%%%%%%%%%%%%%
 		       % FORSIDEN %			
 %%%%%%%%%%%%%%%%%%%%%%%
-
+\include{sektioner/forside}
 
 %%%%%%%%%%%%%%%%%%%%%%%
 
@@ -143,8 +143,10 @@ linkcolor=Black, citecolor=Black]{hyperref}
              
 %%%%%%%%%%%%%%%%%%%%%%%            
 \section*{Resume}
+\input{sektioner/Resume}
 
 \section*{Abstract}
+\input{sektioner/Abstract}
 
 \pagebreak
 
@@ -161,28 +163,41 @@ linkcolor=Black, citecolor=Black]{hyperref}
                         % KAPITLER %			
 %%%%%%%%%%%%%%%%%%%%%%%                        
 \mainmatter
-\chapter{Forord}                     
+\chapter{Forord}
+\input{sektioner/Forord}
+                    
 \chapter{Indledning}
+\input{sektioner/Indledning}
 
-\chapter{Kravspecifikation}
+\chapter{Problemformulering}
+\input{sektioner/Problemformulering}
 
-\chapter{Arkitektur}
+\chapter{Afgrænsning}
+\input{sektioner/Afgraensning}
 
-\chapter{Distributionslinje, belastning og Trinskifter}
+\chapter{Frekvensstabilitet}
+\input{sektioner/Frekvensstabilitet}
 
-\chapter{Måleenhed}
+\chapter{Spændingsstabilitet}
+\input{sektioner/Spaendingsstabilitet}
 
-\chapter{Design af Styringsenhed}
+\chapter{Kortslutningseffekt}
+\input{sektioner/Kortslutningseffekt}
+
+\chapter{Model validering}
+\input{sektioner/Validering}
+
+\chapter{Simulering}
+\input{sektioner/Simulering}
 
 \chapter{Resultat og diskussion}
-
-\chapter{Metode og proces}
-
-\chapter{Fremtidigt arbejde}
+\input{sektioner/ResultatOgDiskussion}
 
 \chapter{Perspektivering}
+\input{sektioner/Perspektivering}
 
 \chapter{Konklusion}
+\input{sektioner/Konklusion}
 
 
 \printbibliography

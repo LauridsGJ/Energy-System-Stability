@@ -7,12 +7,12 @@ Frekvensstabilitet dækker over et elektrisk systems evne til at opretholde elle
 Vedvarende frekvens ustabilitet vil føre til udkobling af produktionsenheder og forbrugere.
 
 Frekvensstabilitet inddeles i \textit{short term} og \textit{long term} stabilitetsproblemer, som vist på figur \ref{fig:Overview}.\\
-\textit{Short term} har en varighed på op til 1 minut og defineres som pludselige ændringer i belastningsforholdet. Dette kunne være tab af en større generationsenhed, en transmissionslinje eller en stor forbruger. \textit{Short term} problemer kan udvikle sig til \textit{long term}, hvis systemet ikke formår med de umiddelbare tilrådige reguleringseheder ikke formår at skabe balance mellem produktion og belastning igen.\\
+\textit{Short term} har en varighed på op til 1 minut og defineres som pludselige ændringer i belastningsforholdet. Dette kunne være tab af en større generationsenhed, en transmissionslinje eller en stor forbruger. \textit{Short term} problemer kan udvikle sig til \textit{long term}, hvis systemet, med de umiddelbare til rådige reguleringsreserver, ikke formår at skabe balance mellem produktion og belastning igen.\\
 \textit{Long term} har en varighed fra 1 minut til flere timer og defineres som længerevarende afvigelser fra den nominelle systemfrekvens. Et \textit{long term} problem kunne opstå gennem mistiming af reguleringen af et stort synkron kraftværk grundet en forudset ændring i produktionen fra vedvarende energikilder i systemet, som følge af vejrændringer.
 Typiske reguleringshastigheder er for et kulkraftværk 1\% i minuttet og for et gaskraftværk 10-15\% i minuttet.
 
-\section{Frekvens regulering og kontrol}
-Frekvensstabiliteten opretholdes i normal drift gennem handel af elektricitet, som sker på timebasis og elektricitetsmarkedet er derfor ansvarlig for at sørge produktionen matcher det forbrug markedet forventer. Ved ubalance i belastningsforholdet har Transmission System Operatoren (TSO) - i Danmark er det Energinet.dk - ansvaret for regulering af produktionen. Der defineres i ENTSO-E Policy 1\footnote{ENTSO-E Policy 1} fire forskellige kontrolreserver til at opretholde den nominelle systemfrekevens.
+\section{Frekvensregulering og kontrol}
+Frekvensstabiliteten opretholdes i normal drift af elnettet gennem handel af elektricitet. Dette sker på timebasis og elektricitetsmarkedet er derfor ansvarlig for at sørge produktionen matcher det forbrug markedet forventer. Ved ubalance i belastningsforholdet har Transmission System Operatoren (TSO) - i Danmark er det Energinet.dk - ansvaret for regulering af produktionen. Der defineres i ENTSO-E Policy 1\footnote{ENTSO-E Policy 1} fire forskellige kontrolreserver til at opretholde den nominelle systemfrekevens.
 
 \begin{description}
 	\item[Primær kontrol] Det enkelte kraftværks egen regulering. Kan aktiveres på sekunder.
@@ -26,14 +26,32 @@ Måden de forskellige kontrolreserver interagerer med hinanden på kan illustres
 \begin{figure}[H] % (alternativt [H])
 	\centering
 	\includegraphics[width=0.9\textwidth]{figurer/Frekvenskontrol}
-	\caption{Skematisk overblik over iværksættelse af kontrolreserver til frekvensregulering}
+	\caption{Skematisk overblik over aktiveringen af kontrolreserver til frekvensregulering}
 	\label{fig:Frekvenskontrol}
 \end{figure}
 
-ENTSO-E policy 1 nedsætter også nogle krav til reservekapaciteten i det centraleuropæiske elnet. Vigtige krav er at primære kontrol skal aktiveres ved frekvensafvigelser på $\pm$20mHz og den skal være fuldt ud aktiveret ved afvigelser på $\pm$200mHz. Størrelsen af den primære reserve bliver fastsat årligt og er på 3000MW.
+ENTSO-E Policy 1 nedsætter også nogle krav til reservekapaciteten i det centraleuropæiske elnet. Vigtige krav er at den primære kontrol skal aktiveres ved frekvensafvigelser på $\pm$20mHz og den skal være fuldt ud aktiveret ved afvigelser på $\pm$200mHz. Størrelsen af den primære reserve bliver fastsat årligt og er på 3000MW. Den primære reserve er normeret fordelt på kraftværker i hele det centraleuropæiske elnet.
 
-Den primære reservekapacitet er ofte placeret ved centrale kraftværker, der er mulige at regulere....
-Fortsæt her med noget relatrete til batteri implementering.
+Den sekundære kontrol implementeres som en Load Frequency Control (LFC) struktur som vist på figur \ref{fig:sekundaerkontrol}. 
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{figurer/Sekundaer_kontrol}
+	\caption{LFC struktur}
+	\label{fig:sekundaerkontrol}
+\end{figure}
+
+Ændringen i frekvens sammenholdes med ændringen i aktiv effekt gennem en K-faktor der er faktor der beregnes ud fra et område i systemets afvigelse fra systemfrekvensen i forhold til effektregulering pga. aktivering af den primære kontrol. Den samlede påkrævede effektregulering filtreres herefter og hvis afvigelsen i frekvens er udenfor et dødbåndsområde vil en PI regulator regulere den generede effekt, sådan at systemfrekvensen igen kan opnåes.
+
+
+\section{Batterier som aktivt netelement}
+
+Måden hvorpå batterier i elnettet kan bidrage til at stabilisere systemfrekvensen er at de både kan absorbere og genere effekt afhængigt af behovet og deres opladningstilstand. Dette kan give fordele i et elnet, hvor andelen er vedvarende energikilder er stor og derved har mindre reguleringsreserve i situationer med utilstrækkeligt vejr.
+
+Her kan batterier fungere som både primær og sekundær reserve grundet den hurtige reguleringsmulighed der er i et rent elektrisk system. Et husstandsbatterier har en typisk kapacitet på 14kWh og kan levere 5kW nominelt og 7kW peak\footnote{TESLA}. Derfor vil enkelte husstandsbatterier ikke kunne bidrage særlig meget til balancering af produktion og forbrug, men en samling af mange husstandsbattier - en såkaldt aggrering vil kunne - vil kunne bidrage med betydelig effekt. Dette kombineret med muligheden for at oplade batterierne i perioder med mulighed for stor produktion fra grønne generationsenheder, så deres kapacitet er til rådighed i perioder med lav produktion fra grønne produktionsenheder kan tilføre den nødvendige fleksibilitet til elnettet for at kunne opretholde systemfrekvensen i en elnet med stor andel af vedvarende energikilder.
+
+Placeringen og typen af batterierne forventes for frekvensstabiliteten at være ubetydelig, da den den generede effekt bare skal matche den absorberede for systemet for at opretholde den nominelle systemfrekvens.
+
+Noget med inerti??? eller rettere mangel derpå??
 
 

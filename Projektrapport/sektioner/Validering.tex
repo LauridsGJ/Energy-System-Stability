@@ -2,3 +2,80 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \label{Validering}
+\section{Validering}
+
+For at sikre at PowerFactory modellen af det dansk elnet, er designet som forventet er der blevet gennemført en validering af modellen. Validering er lavet på baggrund af en spændingsfaldsberegninger og en kortslutningsberegninger. I valideringen forsyner den synkrone generatorenhed hele nettet og belastningsforholdet er designet således der er overenstemmelse mellem produktion og belastning. Vindmølleparken er koblet ud på transmissionsniveau og alle batterier og solceller er koblet ved POC. Ydermere er evt. ringforbindelser og redundant forbindelser koblet ud.
+
+Note til mig selv: INDSÆT FIGUR AF VALIDERINGSMODELLEN.
+
+\subsection{Validering med spændingsfaldsberegninger}
+Spændingsfaldet blev beregnet på 10kV distributionsbusbaren. Dette blev gjort ved at beregne impedansen for alle dele af modellen. Herunder er et beregningseksempel for hvert elnet element i valideringsmodellen.
+
+Synkron generator:
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.85\textwidth]{figurer/Synkron_generator_validering}
+	\caption{Synkron generator impedans}
+	\label{fig:SGimpedans}
+\end{figure}
+
+Transformer:
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.9\textwidth]{figurer/Transformer_validering}
+	\caption{Transformer impedans}
+	\label{fig:Trafoimpedans}
+\end{figure}
+
+Kabel:
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.8\textwidth]{figurer/Kabel_validering}
+	\caption{Kabel impedans}
+	\label{fig:Kabelimpedans}
+\end{figure}
+
+Byer:
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.9\textwidth]{figurer/By_validering}
+	\caption{By impedans ved simuleringsspænding}
+	\label{fig:Byimpedans}
+\end{figure}
+
+ Når impedansen for alle elementer i valideringssimuleringen er beregnet kan man beregne spændingsfaldet ved en bestemt busbar med spændingsdeler formlen. 10kV distributionsbusbaren blev brugt til validering. Zsource dækker her over alle impedanser før 10kV distributionsbusbaren og Zload dækker over alle impedanser efter 10kV distributionsbusbaren. VT4HV er 10kV.
+ 
+ \begin{figure}[H] % (alternativt [H])
+ 	\centering
+ 	\includegraphics[width=0.6\textwidth]{figurer/Spaendingsfald_validering}
+ 	\caption{Spændingsfald ved beregning og simulering}
+ 	\label{fig:Spaendingsfald_validering}
+ \end{figure}
+ 
+ Som det ses på figur \ref{fig:Spaendingsfald_validering} er afvigelsen mellem beregning og simulering 46V vinkel 0.003deg, som er en tilladelig afvigelse på et 10kV referencepunkt. Ud fra spændingsfaldsvalidering er modellen dermed accepteret.
+ 
+\subsection{Validering med kortslutningsberegninger}
+Kortslutningsberegninger blev også beregnet til 10kV distributionsbusbaren. Dette gøres ved at finde kortslutningsimpedansen der er den samme som Zsource, bortset fra at synkron generatorens kortslutningseffekt er større end dens rated effekt og dermed er ses en mindre impedans for synkron generatoren. Den nye beregning er synkron generator impedansen ses på figur \ref{fig:SGimpedansSC}.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.75\textwidth]{figurer/Synkron_generator_valideringSC}
+	\caption{Synkron generator kortslutningsimpedans}
+	\label{fig:SGimpedansSC}
+\end{figure}
+
+Derefter kan kortslutningsstrømmen ved en trefaset kortslutning på 10kV distributionsbusbaren beregnes, samt findes ved simulering.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.75\textwidth]{figurer/Kortslutningsstroem_validering}
+	\caption{Kortslutningsstrøm ved beregning og simulering}
+	\label{fig:SCvalidering}
+\end{figure}
+
+Note til mig selv: FÅ LIGE LAVET ET BILLEDE HVOR MAN KAN SE BÅDE BEREGNING OG SIMULERING + FORKAST ELLER ACCEPTER KORTSLUTNINGSVALIDERING.
+
+
+\subsection{Resultat af validering}
+
+Udfra de beskrevne resultater i begge dele af valideringen, er der opnåede acceptable afvigelse mellem beregning og simulering. Derfor accepteres modellen til videre simuleringen af de tidligere nævnte projekt cases.

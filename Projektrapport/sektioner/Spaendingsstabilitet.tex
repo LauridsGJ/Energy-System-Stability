@@ -2,3 +2,42 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \label{Spaendingsstabilitet}
+
+Spændingsstabilitet er nettets evne til at opretholde den nominelle spænding ved busbarere og forbrugere ved normale og unormale forhold i nettet.
+
+Spændingsstabilitet er iht. figur \ref{fig:Overview} opdelt i \textit{Large- and Small Disturbance Voltage Stability} og herefter \textit{Short Term} og \textit{Long Term}. Store og små forstyrrelser henviser til hvor omfattende problemet er. \\
+\textit{Small Disturbance Voltage Stability} kan være resultatet af et øgede forbrug samtidig med at en linje er ude pga. service, så der vil være et større tab i de resterende linjer, eller hvis en enkelt linje ryger ud pga. en fejl.\\
+\textit{Large Disturbance Voltage Stability} er som regel resultatet af flere hændelser i nettet der skaber et spændingsfald i et større område eller i værste fald forårsager blackout.
+
+Begge dele kan være \textit{Short Term} og \textit{Long Term}. Det kommer an på hvor hurtigt systemet kan reguleres, omlægges eller fjerne fejlen i nettet. På figur \ref{fig:VoltageTime} ses hvilke elementer der kan stabilisere systemet på kort og lang sigt.  
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.6\textwidth]{figurer/Voltage_time}
+	\caption{Oversigt over Short and Long Term disturbances}
+	\label{fig:VoltageTime}
+\end{figure}
+
+
+\section{Spændingsfald i transmissionslinjer}
+\label{SpaeningsfaldITransmissionslinjer}
+Den største årsag til spændingsustabilitet er spændingsfald der hovedsageligt opstår pga. den induktive reaktans i transmissionslinjer. Tabet i linjerne forøges sammen med belastning, hvilket vil kræve en større mængde reaktiv effekt af systemet. På figur \ref{fig:Voltage1} ses et simpelt system med spændingskilde $E_{s}$, kabel impedans $Z_{LN}$, belastnings impedans $Z_{LD}$. 
+
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.5\textwidth]{figurer/Voltage_system}
+	\caption{Skematisk diagram af et net system med forsyning, transmissionslinje og belastning}
+	\label{fig:Voltage1}
+\end{figure}
+
+Ved at undersøge systemet med en variable belastning ses det at den maksimale effekt overførelse er hvor spændingen ved belastningen $V_{R}$ er lig med spændingsfaldet i transmissionslinjen. Dette kaldes det kritiske punkt. Det er også i dette punkt hvor $Z_{LN}$ og $Z_{LD}$ er lige store. Hvis $Z_{LD}$ er mindre end $Z_{LN}$ stiger strømmen og spændingen bliver mindre, der vil skabe et stort spændingsfald og gøre systemet ustabilt. Det normale arbejdspunkt i et system ligger på ca 80\% af maks. belastningen.
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=0.7\textwidth]{figurer/Voltage_curve}
+	\caption{graf for variable belastning i systemet}
+	\label{fig:Voltage2}
+\end{figure}
+
+Ustabilitet kan også ske pga overspændinger. Overspændinger forekommer ved for stor kapacitiv belastning i nettet pga. shunt kondensatorer eller ubelastede transmissions linjer.

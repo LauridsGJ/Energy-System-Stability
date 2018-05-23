@@ -2,3 +2,53 @@
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
 
 \label{Simulering}
+
+\section{Case beskrivelse}
+\subsection{Case 1: Husstandsbatteriers evne til at stabilisere elnettet ved fejl på nettet}
+For at simulere case 1 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet kablet 10kV Cable Town5 ved en udkobling. Dette betegnes som en small disturbance fejl der vil skabe short term ubalance i powerflowet.\\
+Vindmølleparken generer 2MW med pf 0,99 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
+Case 1 simuleres i fire forskellige tilstande.
+
+\begin{description}
+	\item[Tilstand 1] Alle batterierne er frakoblet.
+	\item[Tilstand 2] Batteriet i Town4 leverer 0,25MW og batteriet i Town5 leverer 0,5MW. Begge med pf 0,95 lagging.
+	\item[Tilstand 3] Batteriet i Town4 leverer 0,5MW og batteriet i Town5 leverer 1MW. Begge med pf 0,95 lagging.
+	\item[Tilstand 4] Batteriet i Town4 leverer 0,75MW og batteriet i Town5 leverer 1,5MW. Begge med pf 0,95 lagging.
+\end{description}
+
+Parametrene der overvåges er for synkron generatoren P, Q og V.
+For batterierne i Town4 og Town5 P og Q. Samt V for Transmission 60kV busbar, Town1 busbar, Town2 busbar, Town3 busbar, Town4 busbar og Town5 busbar.
+Derudover overvåges systemfrekvensen.
+
+\subsection{Case 2: Husstandsbatteriers evne til at absorbere overproduktion}
+For at simulere case 2 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet Town2 ved en udkobling ved Distribution by2 busbar. Dette betegnes som en large disturbance fejl, der vil normalt vil skabe en long term ubalance i powerflowet. I case 2 simuleres kun den short term påvirkning det vil have på systemet, da det stadig vil give et indblik i batteriernes evne til at absorbere overproduktion.\\
+Vindmølleparken generer 2MW med pf 0,95 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
+Case 2 simuleres i to forskellige tilstande.
+
+\begin{description}
+	\item[Tilstand 1] Alle batterierne er frakoblet.
+	\item[Tilstand 2] Batterierne i alle byer kobles ind 0,5s efter fejlen og absorberer 0,304MW som kompensation for tabet af byen. Alle med pf 0,95 lagging.
+\end{description}
+
+Parametrene der overvåges er for synkron generatoren P, Q og V.
+For batterierne i alle 5 byer P og Q. Samt V for Transmission 60kV busbar, Town1 busbar, Town2 busbar, Town3 busbar, Town4 busbar og Town5 busbar.
+Derudover overvåges systemfrekvensen.
+
+\subsection{Case 3: Husstandsbatteriers evne til at udglatte produktion over døgnet}
+For at simulere case 3 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging, samt at kablet Transmission cable2 er koblet ud pga. vedligeholdelse. Efter 10s mister systemet vindmølleparken ved en udkobling ved Transmission central 160kV busbar. Dette betegnes som en large disturbance fejl, der vil normalt vil skabe en long term ubalance i powerflowet eller muligvis blackout i større dele at systemet. I case 3 simuleres kun den short term påvirkning det vil have på systemet, da det stadig vil give et indblik i batteriernes evne til at kompensere for mistet produktion.\\
+Vindmølleparken generer 2MW med pf 0,95 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
+Case 3 simuleres i fire forskellige tilstande.
+
+\begin{description}
+	\item[Tilstand 1] Alle batterierne er frakoblet.
+	\item[Tilstand 2] Alle batterier levere 0,5MW med pf 0,95 lagging.
+	\item[Tilstand 3] Alle batterier levere 1MW med pf 0,95 lagging.
+	\item[Tilstand 4] Alle batterier levere 1,35MW (Byer kan betegnes som selvforsynende) med pf 0,95 lagging.
+\end{description}
+
+Parametrene der overvåges er for synkron generatoren P, Q og V.
+For batterierne i alle 5 byer P og Q. Samt V for Transmission 60kV busbar, Town1 busbar, Town2 busbar, Town3 busbar, Town4 busbar og Town5 busbar.
+Derudover overvåges systemfrekvensen.
+
+\subsection{Case 4: Husstandsbatteriers stabiliserende effekt af elnettet kontra en central batteripark}
+Tab af vindmølleprak.

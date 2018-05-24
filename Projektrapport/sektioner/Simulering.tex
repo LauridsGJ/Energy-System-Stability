@@ -4,7 +4,8 @@
 \label{Simulering}
 
 \section{Case 1: Husstandsbatteriers evne til at stabilisere elnettet ved fejl på nettet}
-For at simulere case 1 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet kablet 10kV Cable Town5 ved en udkobling. Dette betegnes som en small disturbance fejl der vil skabe short term ubalance i powerflowet.\\
+\label{SimCase1}
+For at simulere case 1 anvendes et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet kablet 10kV Cable Town5 ved en udkobling. Dette betegnes som en small disturbance fejl der vil skabe short term ubalance i powerflowet.\\
 Vindmølleparken generer 2MW med pf 0,99 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
 Case 1 simuleres i fire forskellige tilstande.
 
@@ -20,7 +21,7 @@ For batterierne i Town4 og Town5 P og Q. Samt V for Transmission 60kV busbar, To
 Derudover overvåges systemfrekvensen.
 
 \section{Case 2: Husstandsbatteriers evne til at absorbere overproduktion}
-For at simulere case 2 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet Town2 ved en udkobling ved Distribution by2 busbar. Dette betegnes som en large disturbance fejl, der vil normalt vil skabe en long term ubalance i powerflowet. I case 2 simuleres kun den short term påvirkning det vil have på systemet, da det stadig vil give et indblik i batteriernes evne til at absorbere overproduktion.\\
+For at simulere case 2 anvendes et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging. Efter 10s mister systemet Town2 pga. en udkobling ved Distribution by2 busbar. Dette betegnes som en large disturbance fejl, der kunne udvikle sig til en long term ubalance i systemet. I case 2 simuleres kun den short term påvirkning udkoblingen vil have på systemet, da det stadigvæk vil give et indblik i batteriernes evne til at absorbere overproduktion.\\
 Vindmølleparken generer 2MW med pf 0,95 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
 Case 2 simuleres i to forskellige tilstande.
 
@@ -33,8 +34,8 @@ Parametrene der overvåges er for synkron generatoren P, Q og V.
 For batterierne i alle 5 byer P og Q. Samt V for Transmission 60kV busbar, Town1 busbar, Town2 busbar, Town3 busbar, Town4 busbar og Town5 busbar.
 Derudover overvåges systemfrekvensen.
 
-\section{Case 3: Husstandsbatteriers evne til at udglatte produktion over døgnet}
-For at simulere case 3 er anvendt et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging, samt at kablet Transmission cable2 er koblet ud pga. vedligeholdelse. Efter 10s mister systemet vindmølleparken ved en udkobling ved Transmission central 160kV busbar. Dette betegnes som en large disturbance fejl, der vil normalt vil skabe en long term ubalance i powerflowet eller muligvis blackout i større dele at systemet. I case 3 simuleres kun den short term påvirkning det vil have på systemet, da det stadig vil give et indblik i batteriernes evne til at kompensere for mistet produktion.\\
+\section{Case 3: Husstandsbatteriers evne til at kompensere for tab af produktion}
+For at simulere case 3 anvendes et scenarie, hvor systemet er fuldt belastet, dvs. hver by trækker 1,524MW med pf 0,95 lagging, samt at kablet Transmission cable2 er koblet ud pga. vedligeholdelse. Efter 10s mister systemet vindmølleparken pga. en udkobling ved Transmission central 160kV busbar. Dette betegnes som en large disturbance fejl, der kunne udvikle sig til en long term ubalance eller muligvis blackout i større dele af systemet. I case 3 simuleres kun den short term påvirkning det vil have på systemet, da det stadig vil give et indblik i batteriernes evne til at kompensere for mistet produktion.\\
 Vindmølleparken generer 2MW med pf 0,95 lagging, solcellerne i hver by levere 0,15MW med pf 0.8 lagging og synkron generatoren er reference maskine.\\
 Case 3 simuleres i fire forskellige tilstande.
 

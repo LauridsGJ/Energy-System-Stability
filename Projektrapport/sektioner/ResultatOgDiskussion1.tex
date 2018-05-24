@@ -1,0 +1,115 @@
+% !TEX root = ../SYSprojektrapport.tex
+% SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
+
+\label{ResultatOgDiskussion}
+
+\section{Case 1: Husstandsbatteriers evne til at stabilisere elnettet ved fejl på nettet}
+I dette afsnit præsenteres resultater for simuleringen af case 1 iht. beskrivelsen i afsnit \ref{SimCase1}. I alle fire tilstande er spændingsændringen ved Town5 busbar (rød linje) og Transmission central 60kV busbar (Grøn linje) samt frekvensændringen på Transmission central 60kV busbar (Grøn linje), præsenteret på hhv. spændingsgraf og frekvensgraf. Derudover er der lavet opsamling over spænding samt effektoverførelse andre relevante steder i systemet i tabel \ref{fig:C1Overview}. \\ \\
+
+\textbf{Tilstand 1: Alle batterierne er frakoblet.}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Voltage1} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Freq1} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 1, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C1T1V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 1, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C1T1F}
+	\end{minipage}
+\end{figure}
+
+\textbf{Tilstand 2: Batteriet i Town4 leverer 0,25MW og batteriet i Town5 leverer 0,5MW. Begge med pf 0,95 lagging.}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Voltage2} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Freq2} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 2, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C1T2V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 2, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C1T2F}
+	\end{minipage}
+\end{figure}
+
+\textbf{Tilstand 3: Batteriet i Town4 leverer 0,5MW og batteriet i Town5 leverer 1MW. Begge med pf 0,95 lagging.}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Voltage3} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Freq3} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 3, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C1T3V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 3, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C1T3F}
+	\end{minipage}
+\end{figure}
+
+\textbf{Tilstand 4: Batteriet i Town4 leverer 0,75MW og batteriet i Town5 leverer 1,5MW. Begge med pf 0,95 lagging.}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Voltage4} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/SmallDisturbance/Freq4} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 4, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C1T4V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 1, Tilstand 4, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C1T4F}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=1\textwidth]{figurer/SmallDisturbance/Overview}
+	\caption{Overblik for spænding og effektoverførelse i nettet}
+	\label{fig:C1Overview}
+\end{figure}
+
+
+I de 3 første tilstande observeres et spændingsfald ved Town5 busbar, når linjen 10kV Cable Town5 udkobles. Størrelsen afhænger af batteriernes effektbidrag. I tilstand 4 ses det at spændingen ved Town5 busbar stiger ved udkoblingen. Spænding ved Transmissions central 60kV busbar forbliver konstant på ca. 1pu i alle tilstande. Spændingsfaldet i tilstandende 1 - 3 er forventet, fordi tabet af den redundante linje vil øge kilde impedansen set fra Town5 busbar. Spændingsfaldet bliver mindre desto mere batteri effektbidrag pga. den reduceret strøm i transmissions og distributions kabler. Spændingsstigningen i tilstand 4 kan forklares ved at Town5 har større produktion end forbrug, derved vil den levere effekt til resten af systemet. Ved tab af 10kV Cable Town5, bliver load impedansen set fra Town5 busbar større og der vil opleves en spændingsstigning ved byens POC.
+
+I de 4 tilstande ses det at frekvensen bliver mere stabilt ved større batteri bidrag. Stigningen på frekvensen i de første tilstande sker fordi at den samlede belastning bliver mindre da spændingen falder, produktionen forsøger at nedregulere, men kan ikke regulere hurtigt nok ift. belastningen. Dette sker ikke i tilstand 4 da spændingen ikke falder.   

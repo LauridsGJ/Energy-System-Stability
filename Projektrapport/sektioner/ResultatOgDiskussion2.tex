@@ -1,2 +1,71 @@
 % !TEX root = ../SYSprojektrapport.tex
 % SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
+
+% !TEX root = ../SYSprojektrapport.tex
+% SKAL STÅ I TOPPEN AF ALLE FILER FOR AT MASTER-filen KOMPILERES 
+
+\label{ResultatOgDiskussion2}
+
+\section{Case 2: Husstandsbatteriers evne til at absorbere overproduktion}
+I dette afsnit præsenteres resultater for simuleringen af case 2 iht. beskrivelsen i afsnit \ref{SimCase2}. I de 2 tilstande er spændingsændringen ved Town5 busbar (rød linje) og Transmission central 60kV busbar (Grøn linje) samt frekvensændringen på Transmission central 60kV busbar (Grøn linje), præsenteret på hhv. spændingsgraf og frekvensgraf. Derudover er der lavet opsamling over spænding samt effektoverførelse andre relevante steder i systemet i tabel \ref{fig:C2Overview}. \\ \\
+
+\textbf{Tilstand 1: Alle batterierne er frakoblet.}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/LossOfTown/Voltage1} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/LossOfTown/Freq1} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 2, Tilstand 1, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C2T1V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 2, Tilstand 1, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C2T1F}
+	\end{minipage}
+\end{figure}
+
+\textbf{Tilstand 2: Batterierne i alle byer kobles ind 0,5s efter fejlen og absorberer 0,304MW som kompensation for tabet af byen. Alle med pf 0,95}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/LossOfTown/Voltage2} % Venstre billede
+	\end{minipage}
+	\hfill
+	\begin{minipage}[b]{0.48\textwidth}
+		\centering
+		\includegraphics[width=1.00\textwidth]{figurer/LossOfTown/Freq2} % Højre billede
+	\end{minipage}
+	\\ % Figurtekster og labels
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 2, Tilstand 2, Spændingsgraf} % Venstre figurtekst og label
+		\label{fig:C2T2V}
+	\end{minipage}
+	\hfill
+	\begin{minipage}[t]{0.48\textwidth}
+		\caption{Case 2, Tilstand 2, Frekvensgraf} % Højre figurtekst og label
+		\label{fig:C2T2F}
+	\end{minipage}
+\end{figure}
+
+\textbf{Tilstandsoverblik}
+\begin{figure}[H] % (alternativt [H])
+	\centering
+	\includegraphics[width=1\textwidth]{figurer/LossOfTown/Overview}
+	\caption{Overblik for spænding og effektoverførelse i nettet}
+	\label{fig:C2Overview}
+\end{figure}
+
+
+I de 3 første tilstande observeres et spændingsfald ved Town5 busbar, når linjen 10kV Cable Town5 udkobles. Størrelsen afhænger af batteriernes effektbidrag. I tilstand 4 ses det at spændingen ved Town5 busbar stiger ved udkoblingen. Spænding ved Transmissions central 60kV busbar forbliver konstant på ca. 1pu i alle tilstande. Spændingsfaldet i tilstandende 1 - 3 er forventet, fordi tabet af den redundante linje vil øge kilde impedansen set fra Town5 busbar. Spændingsfaldet bliver mindre desto mere batteri effektbidrag pga. den reduceret strøm i transmissions og distributions kabler. Spændingsstigningen i tilstand 4 kan forklares ved at Town5 har større produktion end forbrug, derved vil den levere effekt til resten af systemet. Ved tab af 10kV Cable Town5, bliver load impedansen set fra Town5 busbar større og der vil opleves en spændingsstigning ved byens POC.
+
+I de 4 tilstande ses det at frekvensen bliver mere stabilt ved større batteri bidrag. Stigningen på frekvensen i de første tilstande sker fordi at den samlede belastning bliver mindre da spændingen falder, produktionen forsøger at nedregulere, men kan ikke regulere hurtigt nok ift. belastningen. Dette sker ikke i tilstand 4 da spændingen ikke falder.   

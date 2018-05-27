@@ -4,7 +4,7 @@
 \label{Validering}
 \section{Validering}
 
-For at sikre at PowerFactory modellen af det dansk elnet, er designet som forventet er der blevet gennemført en validering af modellen. Validering er lavet på baggrund af en spændingsfaldsberegninger og en kortslutningsberegninger. I valideringen forsyner den synkrone generatorenhed hele nettet og belastningsforholdet er designet således der er overenstemmelse mellem produktion og belastning. Vindmølleparken er koblet ud ved Transmission central 160kV busbar og alle batterier og solceller er koblet ud ved deres POC. Ydermere er evt. ringforbindelser og redundant forbindelser koblet ud, således at kun Town3 forsynes direkte fra Distribution busbar. Se figur \ref{fig:Simdis} og \ref{fig:SimTrans} for referencer.
+For at sikre at PowerFactory modellen af det dansk elnet, er designet som forventet er der blevet gennemført en validering af modellen. Validering er lavet på baggrund af en spændingsfaldsberegninger og en kortslutningsberegninger. I valideringen forsyner den synkrone generatorenhed hele nettet og belastningsforholdet er designet således der er overenstemmelse mellem produktion og belastning. Vindmølleparken er koblet ud ved \textit{Transmission central 160kV busbar} og alle batterier og solceller er koblet ud ved deres POC. Ydermere er evt. ringforbindelser og redundant forbindelser koblet ud, således at kun \textit{Town3} forsynes direkte fra \textit{Distribution busbar}. Se figur \ref{fig:Simdis} og \ref{fig:SimTrans} for referencer.
 
 \subsection{Validering med spændingsfaldsberegninger}
 Spændingsfaldet blev beregnet på 10kV distributionsbusbaren. Dette blev gjort ved at beregne impedansen for alle dele af modellen. Herunder er et beregningseksempel for hvert elnet element i valideringsmodellen.
@@ -41,7 +41,7 @@ Byer:
 	\label{fig:Byimpedans}
 \end{figure}
 
- Når impedansen for alle elementer i valideringssimuleringen er beregnet kan man beregne spændingsfaldet ved en bestemt busbar med spændingsdeler formlen. 10kV distributionsbusbaren blev brugt til validering. Zsource dækker her over alle impedanser før 10kV distributionsbusbaren og Zload dækker over alle impedanser efter 10kV distributionsbusbaren. VT4HV er 10kV.
+ Når impedansen for alle elementer i valideringssimuleringen er beregnet kan man beregne spændingsfaldet ved en bestemt busbar. \textit{Distribution busbar} blev brugt til validering. $Z_{source}$ dækker her over alle impedanser før 10kV distributionsbusbaren og $Z_{load}$ dækker over alle impedanser efter \textit{Distribution busbar}. $V_{T4HV}$ er 10kV.
  
  \begin{figure}[H] % (alternativt [H])
  	\centering
@@ -53,7 +53,7 @@ Byer:
  Som det ses på figur \ref{fig:Spaendingsfald_validering} er afvigelsen mellem beregning og simulering 46V vinkel 0.003deg, som er en tilladelig afvigelse på et 10kV referencepunkt. Ud fra spændingsfaldsvalidering er modellen dermed accepteret.
  
 \subsection{Validering med kortslutningsberegninger}
-Kortslutningsberegninger blev også beregnet til 10kV distributionsbusbaren. Dette gøres ved at finde kortslutningsimpedansen der er den samme som Zsource, bortset fra at synkron generatorens kortslutningseffekt er større end dens rated effekt og dermed er ses en mindre impedans for synkron generatoren. Den nye beregning er synkron generator impedansen ses på figur \ref{fig:SGimpedansSC}.
+Kortslutningsberegninger er også beregnet for \textit{Distribution busbar}. Dette gøres ved at finde kortslutningsimpedansen, der er den samme som $Z_{source}$, bortset fra at synkron generatorens kortslutningseffekt er større end dens rated effekt og dermed ses en mindre kildeimpedans for synkron generatoren. Den nye beregning for synkron generator impedansen ses på figur \ref{fig:SGimpedansSC}.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering
@@ -62,7 +62,7 @@ Kortslutningsberegninger blev også beregnet til 10kV distributionsbusbaren. Det
 	\label{fig:SGimpedansSC}
 \end{figure}
 
-Derefter kan kortslutningsstrømmen ved en trefaset kortslutning på 10kV distributionsbusbaren beregnes, samt findes ved simulering.
+Derefter kan kortslutningsstrømmen ved en trefaset kortslutning på \textit{Distribution busbar} beregnes, samt findes ved simulering.
 
 \begin{figure}[H] % (alternativt [H])
 	\centering

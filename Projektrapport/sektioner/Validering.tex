@@ -4,10 +4,10 @@
 \label{Validering}
 \section{Validering}
 
-For at sikre at PowerFactory modellen af det dansk elnet, er designet som forventet er der blevet gennemført en validering af modellen. Validering er lavet på baggrund af en spændingsfaldsberegninger og en kortslutningsberegninger. I valideringen forsyner den synkrone generatorenhed hele nettet og belastningsforholdet er designet således der er overenstemmelse mellem produktion og belastning. Vindmølleparken er koblet ud ved \textit{Transmission central 150kV busbar} og alle batterier og solceller er koblet ud ved deres POC. Ydermere er ringe og redundante forbindelser koblet ud, således at kun \textit{Town3} forsynes direkte fra \textit{Distribution busbar}. Se figur \ref{fig:Simdis} og \ref{fig:SimTrans} for referencer.
+For at sikre at PowerFactory modellen af det dansk elnet, er designet som forventet er der blevet gennemført en validering af modellen. Validering er lavet på baggrund af en spændingsfaldsberegninger og en kortslutningsberegninger. I valideringen forsyner den synkrone generatorenhed hele nettet og belastningsforholdet er designet således der er overenstemmelse mellem produktion og belastning. Vindmølleparken er koblet ud ved \textit{Transmission central 150kV busbar} og alle batterier og solceller er koblet ud ved deres POC. Ydermere er ring og redundant forbindelser koblet ud, således at kun \textit{Town3} forsynes direkte fra \textit{Distribution busbar}. De resterende byer ligger parallelt med \textit{Town3}. Se figur \ref{fig:Simdis} og \ref{fig:SimTrans} for referencer.
 
 \subsection{Validering med spændingsfaldsberegninger}
-Spændingsfaldet blev beregnet på 10kV distributionsbusbaren. Dette blev gjort ved at beregne impedansen for alle dele af modellen. Herunder er et beregningseksempel for hvert elnet element i valideringsmodellen.
+Spændingsfaldet er beregnet til \textit{Distribution busbar}. Dette er gjort ved at beregne impedansen for alle dele af modellen. Herunder er et beregningseksempel for hvert elnet element i valideringsmodellen.
 
 Synkron generator:
 \begin{figure}[H] % (alternativt [H])
@@ -50,7 +50,7 @@ Byer:
  	\label{fig:Spaendingsfald_validering}
  \end{figure}
  
- Som det ses på figur \ref{fig:Spaendingsfald_validering} er afvigelsen mellem beregning og simulering 46V vinkel 0.003deg, som er en tilladelig afvigelse på et 10kV referencepunkt. Ud fra spændingsfaldsvalidering er modellen dermed accepteret.
+ Som det ses på figur \ref{fig:Spaendingsfald_validering} er afvigelsen mellem beregning og simulering 46V vinkel 0,003deg, som giver en procentafvigelse på 0,48\%. Dette er en tilladelig afvigelse på et 10kV referencepunkt. Ud fra spændingsfaldsvalidering er modellen dermed accepteret.
  
 \subsection{Validering med kortslutningsberegninger}
 Kortslutningsberegninger er også beregnet for \textit{Distribution busbar}. Dette gøres ved at finde kortslutningsimpedansen, der er den samme som $Z_{source}$, bortset fra at synkron generatorens kortslutningseffekt er større end dens rated effekt og dermed ses en mindre kildeimpedans for synkron generatoren. Den nye beregning for synkron generator impedansen ses på figur \ref{fig:SGimpedansSC}.
@@ -71,9 +71,7 @@ Derefter kan kortslutningsstrømmen ved en trefaset kortslutning på \textit{Dis
 	\label{fig:SCvalidering}
 \end{figure}
 
-På figur \ref{fig:SCvalidering} ses det at forskellen på beregning og simulering kun er 4A. Derfor accpeteres modellen også gennem validering med kortslutningsberegninger.
-
-
+På figur \ref{fig:SCvalidering} ses forskellen på beregning og simulering. Da der i simuleringen kun er to betydende cifre til rådighed, anvendes det samme i beregningen og derved er der ingen forskel på simuleringen og beregningen. Derfor accpeteres modellen også gennem validering med kortslutningsberegninger.
 
 \subsection{Resultat af validering}
 

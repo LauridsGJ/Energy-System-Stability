@@ -11,8 +11,8 @@ Frekvensstabilitet inddeles i \textit{short term} og \textit{long term} stabilit
 \textit{Long term} har en varighed fra 1 minut til flere timer og defineres som længerevarende afvigelser fra den nominelle systemfrekvens. Et \textit{long term} problem kunne opstå gennem mistiming af reguleringen på et stort synkron kraftværk grundet en forudset ændring i produktionen fra vedvarende energikilder i systemet, som følge af vejrændringer.
 Typiske reguleringshastigheder er for et kulkraftværk 1\% i minuttet og for et gaskraftværk 10-15\% i minuttet.
 
-\section{Frekvensregulering og kontrol}
-Frekvensstabiliteten opretholdes i normal drift af elnettet gennem handel af elektricitet. Dette sker på timebasis og elektricitetsmarkedet er derfor ansvarlig for at produktionen matcher det forbrug markedet forventer. Ved ubalance i belastningsforholdet har Transmission System Operatoren (TSO) - i Danmark er det Energinet.dk - ansvaret for regulering af produktionen. Der defineres i ENTSO-E Policy 1\footnote{ENTSO-E Policy 1} fire forskellige kontroltyper til at opretholde den nominelle systemfrekvens.
+\subsection{Frekvensregulering og kontrol}
+Frekvensstabiliteten opretholdes i normal drift af elnettet gennem handel af elektricitet. Dette sker på timebasis og elektricitetsmarkedet er derfor ansvarlig for at produktionen matcher det forbrug markedet forventer. Ved ubalance i belastningsforholdet har Transmission System Operatoren (TSO) - i Danmark er det Energinet.dk - ansvaret for regulering af produktionen. I ENTSO-E Policy 1 defineres fire forskellige kontroltyper til at opretholde den nominelle systemfrekvens.
 
 \begin{description}
 	\item[Primær kontrol] Det enkelte kraftværks egen regulering. Kan aktiveres på sekunder.
@@ -46,7 +46,7 @@ Den sekundære kontrol implementeres som en Load Frequency Control (LFC) struktu
 Et begreb der er relevant for et systems robusthed overfor forstyrrelser, der vil påvirke frekvensen, er inerti. Dette skyldes at inerti har betydning for hvor hurtigt et system reagerer overfor ændringer. Et system med stor inerti vil have en længere responstid på forstyrrelse og frekvensændringen vil derfor ske langsommere. Dette er fordelagtigt, da det stiller mindre krav til hvor hurtigt den primære respons skal reagere. Typisk kommer inerti i elnettet fra synkrone maskiner. Nyere vedvarende energikilder er typisk koblet til nettet gennem en frekvensomformer og bidrager derfor ikke med naturlig inerti. Der forskes derfor i hvordan kontrollen af frekvensomformere kan designes til at kunne generere "kunstig inerti". I dag anvendes der også synkron kondensere til at tilføre elnettet inerti.
 
 
-\section{Batterier som aktivt netelement}
+\subsection{Batterier som aktivt netelement}
 
 Måden hvorpå batterier i elnettet kan bidrage til at stabilisere systemfrekvensen er at de både kan absorbere og genere effekt afhængigt af behovet og deres opladningstilstand. Dette kan give fordele i et elnet, hvor andelen er vedvarende energikilder er stor og derved har mindre reguleringsreserve i situationer med utilstrækkeligt vejr.
 
